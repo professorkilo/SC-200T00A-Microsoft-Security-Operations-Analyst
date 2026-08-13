@@ -273,7 +273,7 @@ In this task, you'll create a hunting query, and create a Livestream.
 
 1. Select **Search with Predefined scenarios**.
 
-1. On the **Select a scenarios** pane, select the **Users with access to Sensitive data** Scenario.
+1. On the **Select a scenario** pane, select the **Users with access to Sensitive data** Scenario.
 
 1. In the *Scenario inputs*, enter **sensitivestorageaccount** for the *Target storage account*.
 
