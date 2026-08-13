@@ -1,6 +1,6 @@
 ---
 lab:
-    title: Exercise 1 - Perform Threat Hunting with Microsoft Sentinel in Microsoft Defender XDR
+  title: Exercise 1 - Perform Threat Hunting with Microsoft Sentinel in Microsoft Defender XDR
   module: Learning Path 9 - Perform threat hunting in Microsoft Sentinel
   description: The log data created in the Learning Path 9 lab exercises will not be available in this lab without rerunning the following prerequisite tasks.
   duration: 60 minutes
@@ -213,8 +213,6 @@ In this task, you'll create a hunting query, and create a Livestream.
 
    >**Important:** Please paste any KQL queries first in Notepad and then copy from there to the *New query* tab to avoid any errors.
 
-   >**Note:** If you receive the message, "security.microsoft.com wants to.. See text and images copied to the clipboard", select **Allow**.
-
     ```KQL
     let lookback = 2d; 
     SecurityEvent
@@ -269,11 +267,13 @@ In this task, you'll create a hunting query, and create a Livestream.
 
 1. Expand the **Hunting** section and select **Advanced hunting**.
 
-1. Select the **Create new graph** icon, or the *New graph* tab.
+1. In **Advanced hunting**, select the **+** button next to **New query**.
+
+1. From the menu, select **Hunting graph**.
 
 1. Select **Search with Predefined scenarios**.
 
-1. On the **Search Predefined scenarios** pane, select the **Users with access to Sensitive data** Scenario.
+1. On the **Select a scenarios** pane, select the **Users with access to Sensitive data** Scenario.
 
 1. In the *Scenario inputs*, enter **sensitivestorageaccount** for the *Target storage account*.
 
@@ -454,7 +454,7 @@ In this task, you'll create a Data lake KQL job to look for a C2 attack.
 
     >**Note:** The *_KQL_CL* is the custom log default appendix.
 
-1. Leave the *Create a new table* radio button selected, and enter **C2ATTACKHUNT** for the new table name.
+1. Leave the *Create a new table* radio button selected, and enter **C2ATTACKHUNT_XXX** (replace XXX with your initials or a unique value) for the new table name.
 
 1. Select the **Next** button.
 
@@ -490,9 +490,9 @@ In this task, you'll create a Data lake KQL job to look for a C2 attack.
 
 1. You can view the history of the job runs and other details.
 
-1. Select the *Destination table* link for **C2ATTACKHUNT_KQL_CL**.
+1. Select the *Destination table* link for **C2ATTACKHUNT_XXX_KQL_CL**.
 
-1. This opens the **Advanced hunting** page with the **C2ATTACKHUNT_KQL_CL** table populated in the *New query* form. If the table name has a red rippled underline, it means the table is unknown and it may take several minutes to be updated.
+1. This opens the **Advanced hunting** page with the **C2ATTACKHUNT_XXX_KQL_CL** table populated in the *New query* form. If the table name has a red rippled underline, it means the table is unknown and it may take several minutes to be updated.
 
     >**Note:** After the table is known to *Advanced hunting*, you can modify the query as needed to refine your search.
 
