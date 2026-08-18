@@ -167,7 +167,7 @@ In this task, you'll build KQL statements to aggregate data. **Summarize** group
     ```KQL
     SigninLogs_CL  
     | where TimeGenerated > ago(5d)
-    | summarize dcount(IPAddress_s)
+    | summarize dcount(IPAddress)
     ```
 
 1. The following statement is a rule to detect *User account is disabled* failures across multiple applications for the same account. In the Query Window, enter the following statement and select **Run query**:
@@ -177,8 +177,8 @@ In this task, you'll build KQL statements to aggregate data. **Summarize** group
     let threshold = 1;
     SigninLogs_CL
     | where TimeGenerated >= ago(timeframe)
-    | where ResultDescription_s has "User account is disabled"
-    | summarize applicationCount = dcount(AppDisplayName_s) by UserPrincipalName_s, IPAddress_s
+    | where ResultDescription has "User account is disabled"
+    | summarize applicationCount = dcount(AppDisplayName_s) by UserPrincipalName_s, IPAddress
     | where applicationCount >= threshold
     ```
 
@@ -262,9 +262,7 @@ In this task, you'll generate visualizations with KQL statements.
 
 In this task, you'll build multi-table KQL statements.
 
-1. Change the **Time range** to **Custom time range** in the *Query* window spanning at least 5 days for the following statements.
-
-1. The following statement demonstrates the **union** operator, which takes two or more tables and returns all their rows. Understanding how results are passed and impacted with the pipe character is essential. In the Query Window, enter the following statements and select **Run query** for each query separately to see the results:
+1. The following statements demonstrate the **union** operator, which takes two or more tables and returns all their rows. Understanding how results are passed and impacted with the pipe character is essential. Before running the following queries, change the **Time range** to **Custom time range** in the *Query* window, spanning at least 5 days. In the Query Window, enter the following statements and select **Run query** for each query separately to see the results:
 
     1. **Query 1** returns all rows of SecurityEvent_CL and all rows of SigninLogs_CL.
 
