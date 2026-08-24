@@ -73,7 +73,7 @@ In this task, you'll onboard a device to Microsoft Defender for Endpoint using t
 
 1. Open the downloaded ZIP file from the browser download notification, or navigate to the **Downloads** folder.
 
- >**Hint:** The downloaded file should be located in `C:\Users\Admin\Downloads`.
+    >**Hint:** The downloaded file should be located in `C:\Users\Admin\Downloads`.
 
 1. Right-click the downloaded ZIP file, select **Extract All...**, verify that **Show extracted files when complete** is selected, and then select **Extract**.
 
