@@ -77,8 +77,8 @@ In this task, you'll onboard a device to Microsoft Defender for Endpoint using t
 
 1. Right-click the downloaded ZIP file, select **Extract All...**, verify that **Show extracted files when complete** is selected, and then select **Extract**.
 
-1. Open the extracted folder and run **DefenderDeploymentTool_Onboard_<name>.exe**.
-
+1. Open the extracted folder and run **DefenderDeploymentTool_Onboard_`<name>`.exe** (where `<name>` matches the name you entered).
+   
 1. If the **User Account Control** window appears, select **Yes**.
 
 1. In the **Microsoft Defender deployment tool** window, select **Continue**.
