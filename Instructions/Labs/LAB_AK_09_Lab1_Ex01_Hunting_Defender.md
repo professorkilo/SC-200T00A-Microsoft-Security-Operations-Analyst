@@ -53,13 +53,13 @@ As described above, Azure Arc has been pre-installed on the **WINServer** machin
     azcmagent connect -g "SentinelStatic" -l "CentralUS" -s "Subscription ID string"
     ```
 
-1. Replace the **Subscription ID string** with the *Subscription ID* provided by your lab hoster (*Resources tab). Make sure to keep the quotes.
+1. Replace the **Subscription ID string** with the *Subscription ID* provided for this lab. Make sure to keep the quotes.
 
 1. Type **Enter** to run the command (this may take a couple minutes).
 
     >**Note**: If you see the *How do you want to open this?* browser selection window, select **Microsoft Edge**.
 
-1. In the **Sign in** dialog box, enter your **Tenant Email** and **Tenant Password** provided by your lab hosting provider and select **Sign in**. Wait for the *Authentication complete* message, close the browser tab and return to the *Command Prompt* window.
+1. In the **Sign in** dialog box, enter the **Tenant Email** and **Tenant Password** provided for this lab, and then select **Sign in**. Wait for the *Authentication complete* message, close the browser tab, and return to the *Command Prompt* window.
 
     >**Note:** You may be prompted to enter the *Temporary Access Pass* (TAP) instead of a password.
 
@@ -81,9 +81,9 @@ In this task, you'll add an Azure Arc connected, on-premises machine to Microsof
 
 1. In the **Microsoft Edge** browser, navigate to **Microsoft Defender XDR** at `https://security.microsoft.com`.
 
-1. In the **Sign in** dialog box, copy, and paste in the **Tenant Email** account provided by your lab hosting provider and then select **Next**.
+1. In the **Sign in** dialog box, enter the **Tenant Email** account provided for this lab, and then select **Next**.
 
-1. In the **Enter password** dialog box, copy, and paste in the **Tenant Password** provided by your lab hosting provider and then select **Sign in**.
+1. In the **Enter password** dialog box, enter the **Tenant Password** provided for this lab, and then select **Sign in**.
 
     >**Note:** You may be prompted to enter the *Temporary Access Pass* (TAP) instead of a password.
 
@@ -199,11 +199,11 @@ In this task, you'll create a hunting query, and create a Livestream.
 
 1. In the **Microsoft Edge** browser, navigate to **Microsoft Defender XDR** at `https://security.microsoft.com`.
 
-1. In the **Sign in** dialog box, copy, and paste in the **Tenant Email** account provided by your lab hosting provider and then select **Next**.
+1. In the **Sign in** dialog box, enter the **Tenant Email** account provided for this lab, and then select **Next**.
 
-1. In the **Enter password** dialog box, copy, and paste in the **Tenant Password** provided by your lab hosting provider and then select **Sign in**.
+1. In the **Enter password** dialog box, enter the **Tenant Password** provided for this lab, and then select **Sign in**.
 
-    >**Note:** You may be prompted to enter the *Temporary Access Pass* (TAP) instead of a password. This is also provided in the resources tab. If prompted, copy and paste the TAP value and select **Sign in**.
+    >**Note:** You may be prompted to enter the *Temporary Access Pass* (TAP) provided for this lab instead of a password. If prompted, enter the TAP and select **Sign in**.
 
 1. In the Microsoft Defender navigation menu, scroll down and expand the **Investigation & Response** section.
 
@@ -234,15 +234,17 @@ In this task, you'll create a hunting query, and create a Livestream.
 
 1. In the **Link to incident** pane, leave the **Create new incident** radio button selected.
 
+1. Create a unique identifier by combining your initials with four digits, such as **HR1234**. Record this identifier so you can locate your incident.
+
 1. Fill in the following fields:
 
     |Setting|Value|
     |---|---|
-    |Alert title|**PowerShell C2 Hunt**|
+    |Alert title|**PowerShell C2 Hunt - *your unique identifier***|
     |Severity|**High**|
     |Category|**Command and Control**|
     |MITRE techniques|**T1094: Custom Command and Control Protocol**|
-    |Description|**PowerShell C2 Hunt results**|
+    |Description|**PowerShell C2 Hunt results - *your unique identifier***|
     |Recommended actions|**Perform incident remediation**|
 
 1. Select **Next**.
@@ -259,7 +261,9 @@ In this task, you'll create a hunting query, and create a Livestream.
 
 1. Expand the **Incidents & Alerts** section and select **Incidents**.
 
-1. In the **Incidents** pane, you should see the **PowerShell C2 Hunt** incident listed.
+1. Set **Last update time** to **1 Day**, and then search for **PowerShell C2 Hunt - *your unique identifier***.
+
+1. In the **Incidents** pane, verify that your **PowerShell C2 Hunt - *your unique identifier*** incident is listed.
 
 ### Task 2: Hunt with Microsoft Sentinel graph
 
