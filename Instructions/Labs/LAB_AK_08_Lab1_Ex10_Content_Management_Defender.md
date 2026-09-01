@@ -41,7 +41,7 @@ In this task, you will enable Entity behavior analytics in Microsoft Sentinel.
 
 1. Expand the **Configuration** section and select **Analytics**.
 
-1. Select the **Startup RegKey - *your unique identifier*** rule that you created earlier.
+1. Select the **SecurityEvent Local Administrators User Add - *your unique identifier*** analytics rule that you created in Exercise 6, Task 2.
 
 1. Select the **Export** from the toolbar. **Hint:** You might need to select the ellipsis icon **(...)** to see it.
 
