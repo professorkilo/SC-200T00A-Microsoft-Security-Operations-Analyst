@@ -34,11 +34,11 @@ In this task, you will investigate an incident.
 
 1. Open **Microsoft Edge** and navigate to **Microsoft Defender XDR** at `https://security.microsoft.com`.
 
-1. In the **Sign in** dialog box, copy, and paste in the **Tenant Email** account provided by your lab hosting provider and then select **Next**.
+1. In the **Sign in** dialog box, enter the **Tenant Email** account provided for this lab, and then select **Next**.
 
-1. In the **Enter password** dialog box, copy, and paste in the **Tenant Password** provided by your lab hosting provider and then select **Sign in**.
+1. In the **Enter password** dialog box, enter the **Tenant Password** provided for this lab, and then select **Sign in**.
 
-    >**Note:** You may be prompted to enter the *Temporary Access Pass* (TAP) instead of a password. This is also provided in the resources tab. If prompted, copy and paste the TAP value and select **Sign in**.
+    >**Note:** You may be prompted to enter the *Temporary Access Pass* (TAP) provided for this lab instead of a password. If prompted, enter the TAP and select **Sign in**.
 
 1. In the Microsoft Defender navigation menu, scroll down and expand the **Investigation & response** section.
 
@@ -47,8 +47,10 @@ In this task, you will investigate an incident.
 1. Review the list of incidents.
 
     >**Note:** The Analytics rules are generating alerts and incidents on the same specific log entry. Remember that this was done in the *Query scheduling* configuration to generate more alerts and incidents to be utilized in the lab.
-  
-1. Select one of the **Startup RegKey** incidents.
+
+1. Set **Last update time** to **1 Day**, and then search for **Startup RegKey - *your unique identifier*** using the identifier you created in the previous exercise.
+
+1. Select one of the matching **Startup RegKey - *your unique identifier*** incidents.
 
 1. Review the incident details on the page that opened.
 

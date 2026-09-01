@@ -23,7 +23,7 @@ Analytics rules search for specific events or sets of events across your environ
 
 ### Estimated time to complete this lab: 45 minutes
 
->**Note:** Microsoft Sentinel has been predeployed in your Azure subscription with the name **sentinelworkspace-01**, and the *Azure Activity* solution and data connector have been installed and connected.
+>**Note:** Microsoft Sentinel has been predeployed with the name **sentinelworkspace-01**. The *Azure Activity* solution and data connector are installed for the subscription that contains the workspace. Azure Activity events from another subscription reach this workspace only when that subscription is also connected.
 
 ### Task 1: Create a Scheduled Query rule
 
@@ -33,11 +33,11 @@ In this task, you create a *Microsoft Sentinel analytics scheduled query rule*.
 
 1. Open **Microsoft Edge** browser and navigate to **Microsoft Defender XDR** at `https://security.microsoft.com`.
 
-1. In the **Sign in** dialog box, copy, and paste in the **Tenant Email** account provided by your lab hosting provider and then select **Next**.
+1. In the **Sign in** dialog box, enter the **Tenant Email** account provided for this lab, and then select **Next**.
 
-1. In the **Enter password** dialog box, copy, and paste in the **Tenant Password** provided by your lab hosting provider and then select **Sign in**.
+1. In the **Enter password** dialog box, enter the **Tenant Password** provided for this lab, and then select **Sign in**.
 
-    >**Note:** You may be prompted to enter the *Temporary Access Pass* (TAP) instead of a password. This is also provided in the resources tab. If prompted, copy and paste the TAP value and select **Sign in**.
+    >**Note:** You may be prompted to enter the *Temporary Access Pass* (TAP) provided for this lab instead of a password. If prompted, enter the TAP and select **Sign in**.
 
 1. In the Microsoft Defender navigation menu, scroll down and expand the **Microsoft Sentinel** section.
 
@@ -47,7 +47,7 @@ In this task, you create a *Microsoft Sentinel analytics scheduled query rule*.
 
 1. Select the **New CloudShell User** rule to open the rule details pane. Verify that you are receiving data by reviewing the green icon under *Data sources: Azure Activity*.
 
-    > **Note:** If the data source is not shown as connected, and you completed the *Prerequisite task* above, you may need to wait longer for the process to complete.
+    > **Important:** If the data source isn't connected, the rule can't create an incident from Azure Activity events. Continue through Task 2 to review the rule configuration, but treat Task 3 as a guided review unless the subscription where you create Cloud Shell is connected to this workspace through the Azure Activity data connector.
 
 1. Select **Create rule**.
 
@@ -114,15 +114,15 @@ In this task, you create a *Microsoft Sentinel analytics scheduled query rule*.
 
 In this task, you test your new scheduled query rule. You start by enabling *Cloud Shell* in the Azure portal, which will trigger the rule you created in the previous task and generate an incident.
 
->**Note:** Your lab hosting provider may provide alternate instructions for enabling Cloud Shell to trigger the rule. If so, please follow those instructions instead of the ones below.
+>**Note:** If alternate Cloud Shell instructions are provided for this lab, follow them instead of the steps below.
 
 1. In the Microsoft Edge browser, navigate to the Azure portal at `https://portal.azure.com`.
 
-1. In the **Sign in** dialog box, copy, and paste in the **Tenant Email** account provided by your lab hosting provider and then select **Next**.
+1. In the **Sign in** dialog box, enter the **Tenant Email** account provided for this lab, and then select **Next**.
 
-1. In the **Enter password** dialog box, copy, and paste in the **Tenant Password** provided by your lab hosting provider and then select **Sign in**.
+1. In the **Enter password** dialog box, enter the **Tenant Password** provided for this lab, and then select **Sign in**.
 
-    >**Note:** You may be prompted to enter the *Temporary Access Pass* (TAP) instead of a password. This is also provided in the resources tab. If prompted, copy and paste the TAP value and select **Sign in**.
+    >**Note:** You may be prompted to enter the *Temporary Access Pass* (TAP) provided for this lab instead of a password. If prompted, enter the TAP and select **Sign in**.
 
 1. On the menu bar of the Azure portal, Select the icon **>_** that corresponds to *Cloud Shell*. You might need to select the ellipsis icon first **(...)** if your display resolution is too low.
 
@@ -138,7 +138,9 @@ In this task, you test your new scheduled query rule. You start by enabling *Clo
 
 1. In the Search bar of the Azure portal, type *Activity* and then select **Activity Log**.
 
-1. Make sure the following *Operation name* items appear: **List Storage Account Keys** and **Update Storage Account Create**. These are the operations that the KQL query you reviewed earlier will match to generate the alert. **Hint:** You might need to select **Refresh** to update the list.
+1. Check for the following *Operation name* items: **List Storage Account Keys** and **Update Storage Account Create**. These are the operations that the KQL query you reviewed earlier matches to generate the alert. **Hint:** You might need to select **Refresh** to update the list.
+
+    >**Note:** If these operations don't appear, review the expected operation names and continue to the incident page. The incident won't be created unless matching Azure Activity events reach the Microsoft Sentinel workspace.
 
 1. Return to Defender XDR at `https://security.microsoft.com`.
 
@@ -146,10 +148,12 @@ In this task, you test your new scheduled query rule. You start by enabling *Clo
 
 1. Expand the **Incidents & alerts** section, and then select **Incidents**.
 
-1. You should see the newly created Incident.
+1. Set **Last update time** to **1 Day**, and then search for **New CloudShell User**.
 
-    >**Note:** The event that triggers the incident may take 5+ minutes to process. Continue with the next exercise, you will come back to this view later.
+1. If the matching Azure Activity events reached the workspace, verify that your newly created **New CloudShell User** incident appears.
 
-1. Select the Incident and review the information in the right blade.
+    >**Note:** The event that triggers the incident may take more than 5 minutes to process. If it doesn't appear, continue with the next exercise and return to this view later. If the Cloud Shell subscription isn't connected to the workspace, review the expected incident workflow without waiting for an incident.
+
+1. If the incident appears, select it and review the information in the right pane. Otherwise, review the available incident list and identify where the incident title, owner, severity, and status would appear.
 
 ## Proceed to Exercise 3

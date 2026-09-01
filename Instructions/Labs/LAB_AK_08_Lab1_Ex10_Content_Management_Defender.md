@@ -31,17 +31,17 @@ In this task, you will enable Entity behavior analytics in Microsoft Sentinel.
 
 1. Open **Microsoft Edge** browser and navigate to **Microsoft Defender XDR** at `https://security.microsoft.com`.
 
-1. In the **Sign in** dialog box, copy, and paste in the **Tenant Email** account provided by your lab hosting provider and then select **Next**.
+1. In the **Sign in** dialog box, enter the **Tenant Email** account provided for this lab, and then select **Next**.
 
-1. In the **Enter password** dialog box, copy, and paste in the **Tenant Password** provided by your lab hosting provider and then select **Sign in**.
+1. In the **Enter password** dialog box, enter the **Tenant Password** provided for this lab, and then select **Sign in**.
 
-    >**Note:** You may be prompted to enter the *Temporary Access Pass* (TAP) instead of a password. This is also provided in the resources tab. If prompted, copy and paste the TAP value and select **Sign in**.
+    >**Note:** You may be prompted to enter the *Temporary Access Pass* (TAP) provided for this lab instead of a password. If prompted, enter the TAP and select **Sign in**.
 
 1. In the Microsoft Defender navigation menu, scroll down and expand the **Microsoft Sentinel** section.
 
 1. Expand the **Configuration** section and select **Analytics**.
 
-1. Select the **Startup RegKey** rule that you created earlier.
+1. Select the **SecurityEvent Local Administrators User Add - *your unique identifier*** analytics rule that you created in Exercise 6, Task 2.
 
 1. Select the **Export** from the toolbar. **Hint:** You might need to select the ellipsis icon **(...)** to see it.
 

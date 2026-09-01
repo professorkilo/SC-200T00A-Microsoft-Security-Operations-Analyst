@@ -32,11 +32,11 @@ In this task, you will explore Entity behavior analytics in Microsoft Sentinel.
 
 1. Open **Microsoft Edge** browser and navigate to **Microsoft Defender XDR** at `https://security.microsoft.com`.
 
-1. In the **Sign in** dialog box, copy, and paste in the **Tenant Email** account provided by your lab hosting provider and then select **Next**.
+1. In the **Sign in** dialog box, enter the **Tenant Email** account provided for this lab, and then select **Next**.
 
-1. In the **Enter password** dialog box, copy, and paste in the **Tenant Password** provided by your lab hosting provider and then select **Sign in**.
+1. In the **Enter password** dialog box, enter the **Tenant Password** provided for this lab, and then select **Sign in**.
 
-    >**Note:** You may be prompted to enter the *Temporary Access Pass* (TAP) instead of a password. This is also provided in the resources tab. If prompted, copy and paste the TAP value and select **Sign in**.
+    >**Note:** You may be prompted to enter the *Temporary Access Pass* (TAP) provided for this lab instead of a password. If prompted, enter the TAP and select **Sign in**.
 
 1. In the Microsoft Defender navigation menu, scroll down and expand the **System** section.
 
@@ -66,7 +66,9 @@ In this task, you will confirm Anomalies analytics rules are enabled.
 
 1. Confirm that the **Status** column for the rules is *Enabled*.
 
-1. Select any rule and then select **Edit** on the rule blade.
+1. In the **Name** column, identify an enabled Production rule that does not have a corresponding rule whose name begins with **FLGT**. Use the search box to confirm that no **FLGT** rule has the same base name. Select the eligible Production rule, and then select **Edit** on the rule blade.
+
+    >**Note:** Only one Production rule and one Flighting copy of that rule can exist at a time. In a shared environment, every visible Production rule might already have a corresponding **FLGT** rule. If no eligible rule remains, review the remaining steps without making changes.
 
 1. Review the **General** tab information. Notice the *Mode* is **Production** and then select **Next: Configuration**.
 
@@ -74,7 +76,7 @@ In this task, you will confirm Anomalies analytics rules are enabled.
 
 1. Then select **Cancel** button on the lower right to exit the Analytics rule wizard.
 
-1. Scroll right to the analytics rule you selected until see and select the ellipsis **(...)** icon.
+1. Scroll right to the analytics rule you selected, and then select the ellipsis **(...)** icon.
 
 1. Select **Duplicate** and scroll left to review the new rule with the **FLGT** tab at the beginning of the name.
 
@@ -89,5 +91,7 @@ In this task, you will confirm Anomalies analytics rules are enabled.
 1. Select **Next: Review and Create** and then **Save** to update the rule.
 
     >**Note:** You can upgrade the **Flighting** rule to **Production** by changing the setting on this rule and save the changes. The **Production** rule will become the **Flighting** rule afterwards.
+
+1. If you duplicated and edited a rule in this exercise, select the ellipsis **(...)** icon for the **FLGT** rule you created, select **Delete**, and confirm the deletion. If no eligible rule was available and you performed a review-only walkthrough, skip this step.
 
 ## Proceed to Exercise 4

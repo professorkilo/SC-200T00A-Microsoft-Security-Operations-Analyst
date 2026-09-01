@@ -37,11 +37,11 @@ In this task, you will create a detection for the first attack of the previous e
 
 1. Open **Microsoft Edge** and navigate to **Microsoft Defender XDR** at `https://security.microsoft.com`.
 
-1. In the **Sign in** dialog box, copy, and paste in the **Tenant Email** account provided by your lab hosting provider and then select **Next**.
+1. In the **Sign in** dialog box, enter the **Tenant Email** account provided for this lab, and then select **Next**.
 
-1. In the **Enter password** dialog box, copy, and paste in the **Tenant Password** provided by your lab hosting provider and then select **Sign in**.
+1. In the **Enter password** dialog box, enter the **Tenant Password** provided for this lab, and then select **Sign in**.
 
-    >**Note:** You may be prompted to enter the *Temporary Access Pass* (TAP) instead of a password. This is also provided in the resources tab. If prompted, copy and paste the TAP value and select **Sign in**.
+    >**Note:** You may be prompted to enter the *Temporary Access Pass* (TAP) provided for this lab instead of a password. If prompted, enter the TAP and select **Sign in**.
 
 1. In the Microsoft Defender navigation menu, scroll down and expand the **Investigation & response** section.
 
@@ -80,12 +80,14 @@ In this task, you will create a detection for the first attack of the previous e
 
     >**Note:** If you don't see the option, make sure you have selected the row with the event in the results.
 
+1. Create a unique identifier by combining your initials with four digits, such as **HR1234**. Record this identifier because you will use it to locate your incident in later exercises.
+
 1. This opens the "Custom detection" page. For the *General* page type:
 
     |Setting|Value|
     |---|---|
-    |Name|Startup RegKey|
-    |Description|Startup RegKey in c:\temp|
+    |Name|Startup RegKey - *your unique identifier*|
+    |Description|Startup RegKey in c:\temp - *your unique identifier*|
     |Category|Persistence|
     |Severity|High|
 
@@ -106,8 +108,8 @@ In this task, you will create a detection for the first attack of the previous e
     
     |Setting|Value|
     |---|---|
-    |Alert title|**Alert from {{Computer}}**|
-    |Description|**Alert from {{Process}} at {{TimeGenerated}}**|
+    |Alert title|**Alert - *your unique identifier* - from {{Computer}}**|
+    |Description|**Alert - *your unique identifier* - from {{Process}} at {{TimeGenerated}}**|
 
 1. In the **Custom details** section, enter a key-value pair as follows:
 
@@ -123,9 +125,7 @@ In this task, you will create a detection for the first attack of the previous e
 
 1. Select **Next**.
 
-    <!--- 1. For the *Incident settings* tab, leave the default values and select **Next: Automated response >** button. --->
-
-1. On the **Automated actions** page under *Remediation actions to take*, expand the **Devices** section and select the following:`
+1. On the **Automated actions** page under *Remediation actions to take*, expand the **Devices** section and select the following:
 
     - **Collect investigation package**
     - **Initialize investigation**
@@ -136,23 +136,6 @@ In this task, you will create a detection for the first attack of the previous e
 1. On the **Review and create** page, review the detection rule settings and select the **Submit** button to create the new Custom detection rule.
 
 1. You should see that the rule was saved successfully, and be back in **Advanced hunting** query page.
-
-     <!--- 1. Use the settings in the table to configure the automation rule.
-
-    |Setting|Value|
-    |:----|:----|
-    |Automation rule name|Startup RegKey|
-    |Trigger|When incident is created|
-    |Actions |Run playbook|
-    |playbook |Defender_XDR_Ransomware_Playbook_SecOps-Tasks|
-
-    >**Note:** You have already assigned permissions to the playbook, so it will be available.
-
-    1. Select **Apply**
-
-    1. Select the **Next: Review + create >** button.
-  
-    1. On the *Review and create* tab, select the **Save** button to create the new Scheduled Analytics rule. --->
 
 ### Task 2: Privilege Elevation Attack Detection
 
@@ -218,8 +201,8 @@ In this task, you will create a detection for the second attack of the previous 
 
     |Setting|Value|
     |---|---|
-    |Name|**SecurityEvent Local Administrators User Add**|
-    |Description|**User added to Local Administrators group**|
+    |Name|**SecurityEvent Local Administrators User Add - *your unique identifier***|
+    |Description|**User added to Local Administrators group - *your unique identifier***|
     |Severity|**High**|
     |MITRE ATT&CK|**Privilege Escalation**|
    
@@ -256,10 +239,10 @@ In this task, you will create a detection for the second attack of the previous 
 
    |Setting|Value|
    |:----|:----|
-   |Automation rule name|SecurityEvent Local Administrators User Add|
+    |Automation rule name|SecurityEvent Local Administrators User Add - *your unique identifier*|
    |Trigger|When incident is created|
    |Actions |Run playbook|
-   |playbook |Defender_XDR_Ransomware_Playbook_SecOps-Tasks|
+    |playbook |Defender_XDR_Ransomware_Playbook_SecOps_Tasks|
 
    >**Note:** You have already assigned permissions to the playbook, so it will be available.
 
