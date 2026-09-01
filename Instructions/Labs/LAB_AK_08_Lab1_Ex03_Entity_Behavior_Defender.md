@@ -92,6 +92,6 @@ In this task, you will confirm Anomalies analytics rules are enabled.
 
     >**Note:** You can upgrade the **Flighting** rule to **Production** by changing the setting on this rule and save the changes. The **Production** rule will become the **Flighting** rule afterwards.
 
-1. After reviewing the updated rule, select its ellipsis **(...)** icon, select **Delete**, and confirm the deletion. This cleanup allows another learner to duplicate the Production rule.
+1. If you duplicated and edited a rule in this exercise, select the ellipsis **(...)** icon for the **FLGT** rule you created, select **Delete**, and confirm the deletion. If no eligible rule was available and you performed a review-only walkthrough, skip this step.
 
 ## Proceed to Exercise 4
